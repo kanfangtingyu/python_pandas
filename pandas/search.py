@@ -18,3 +18,10 @@ print(df.loc[(df["bWendu"]<=30) & (df["yWendu"]>=15) & (df["tianqi"]=="晴") & (
 # def func():
 #     pass
 # df.loc[func ]
+
+def get_cha(x):
+    return (str(x['bWendu'] - x['yWendu']) + '℃')
+    #return wenca + '℃'
+
+df["温差"] = df.apply(get_cha,axis=1)
+print(df.head())
